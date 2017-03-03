@@ -1,0 +1,22 @@
+<%= form_for(dank) do |f| %>
+  <% if dank.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dank.errors.count, "error") %> prohibited this dank from being saved:</h2>
+
+      <ul>
+      <% dank.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
